@@ -1,0 +1,12 @@
+{{ define "main" }}
+    {{- range .Site.RegularPages }}
+        {{ if .Title }}
+        <article>
+            <span>
+                <time datetime="{{ .Date.Format "2006-01-02"}}">{{ .Date.Format "02 Jan 2006"}}</time>
+            </span>
+            <h1 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        </article>
+        {{ end }}
+    {{- end }}
+{{ end }}

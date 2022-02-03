@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#fff">
+<meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
+
+{{ if .Description }}
+    <meta name="description" content="{{ .Description }}">
+{{ else if .Summary }}
+    <meta name="description" content="{{ .Summary }}">
+{{ else if .Site.Params.Description }}
+    <meta name="description" content="{{ .Site.Params.Description }}">
+{{ end }}
+
+{{ if .IsHome }}
+    <title>{{ .Site.Title }}</title>
+    <link rel="alternate" title="{{ .Site.Title }}" type="application/rss+xml" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" >
+{{ else }}
+    <title>{{ .Title }}</title>
+{{ end }}
+
+{{ partial "ogp.html" .}}
+
+{{ $style := resources.Get "/css/main.css" | minify }}
+<link href="{{ $style.RelPermalink }}" rel="stylesheet">
+{{ $highlight := resources.Get "/css/highlight.css" | minify }}
+<link href="{{ $highlight.RelPermalink }}" rel="stylesheet">
+<link rel="icon" href="{{ "favicon.ico" | relURL }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "favicon.svg" | relURL }}">
+<link rel="mask-icon" color="#dd8c79" href="{{ "mask-icon.svg" | relURL }}">

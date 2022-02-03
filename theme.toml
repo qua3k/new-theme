@@ -1,0 +1,11 @@
+description = "a new blog theme based on words.filippo.io and new.css"
+features = "blog"
+homepage = "https://github.com/qua3k/new-theme"
+license = "MIT"
+licenselink = "https://github.com/qua3k/new-theme/blob/master/LICENSE"
+name = "new-theme"
+tags = "blog"
+
+[author]
+  homepage = "https://qua3k.github.io/"
+  name = "qua3k"

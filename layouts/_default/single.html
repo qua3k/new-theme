@@ -1,0 +1,12 @@
+{{ define "main" }}
+    <span class="site-metadata">
+        <time datetime="{{ .Date.Format "2006-01-02"}}">{{ .Date.Format "02 Jan 2006"}}</time>
+    </span>
+    {{ if .Title }}
+        <h1 class="title">{{ .Title }}</h1>
+    {{ end }}
+    {{ if .Description }}
+        <p class="description">{{ .Description }}</p>
+    {{ end }}
+    {{ .Content }}
+{{ end }}
