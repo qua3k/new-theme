@@ -5,7 +5,7 @@
  @font-face {
     font-display: swap;
     font-family: Bitter;
-    src: url(/fonts/Bitter-Medium.ttf) format("truetype");
+    src: url(/fonts/Bitter-Medium.woff2) format("woff2");
 }
 
 :root {
